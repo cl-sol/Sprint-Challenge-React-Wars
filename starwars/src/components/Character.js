@@ -21,7 +21,7 @@ const Characters = () => {
         <div>
             {characters.map(character => {
                 return (
-                    <CharacterList key={character.id}
+                    <CharacterList key = {character.id}
                     name = {character.name}
                     image = {character.image}
                     species = {character.species}
@@ -29,7 +29,7 @@ const Characters = () => {
                     />
                 )
             })}
-            test</div>
+        </div>
     );
 }
 

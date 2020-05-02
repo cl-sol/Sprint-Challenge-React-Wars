@@ -1,22 +1,23 @@
 // Write your Character component here
-import React, {useState} from "react";
-
+import React, {useState, useEffect} from "react";
 import axios from "axios";
 
-const Character = () => {
-    axios.get("https://pokeapi.co/api/v2/pokemon/25/")
-    .then(response => {
-        console.log(response);
-    })
-    .catch(err => {
-        console.log(err);
-    })
+const Characters = () => {
+    const [characters, setCharacters] = useState([]);
 
-return (
-    <div>
-        Test
-    </div>
-)
+    useEffect( () => {
+        axios.get("https://rickandmortyapi.com/api/character/")
+        .then(response => {
+            console.log(response);
+        })
+        .catch(err => {
+            console.log(err);
+        })
+    }, [])
+
+    return (
+        <div>test</div>
+    );
 }
 
-export default Character;
+export default Characters;
